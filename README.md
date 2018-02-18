@@ -18,7 +18,7 @@ they need the data stored in HDFS. However, they need to know the format in whic
     - You will need to create a Twitter developer account in order to activate your account to retrieve Twitter data.
     - The Twitter API has limitation on the amount of twitters you can retrieve and how often you can query the API. However, these limitations are well within the limits needed for this project
     - You can write this utility using the programming language of your choice.
-    
+    (2/19/18 - Professor confirmed ability to use Tweepy as per: https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)
 2. The data collected in (1) should be:
     - Stored on HDFS
     - Available for querying using Hive or Impala

@@ -1,3 +1,7 @@
+# Twitter key
+twitterkeys.py
+twitterkeys.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -69,6 +73,8 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+**.ipynb
+*.ipynb
 
 # pyenv
 .python-version

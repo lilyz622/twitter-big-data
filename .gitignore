@@ -69,6 +69,8 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+**.ipynb
+*.ipynb
 
 # pyenv
 .python-version
@@ -102,3 +104,5 @@ ENV/
 
 #Add ignore for .vscode
 **/.vscode
+
+**/config.py

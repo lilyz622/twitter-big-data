@@ -114,3 +114,5 @@ ENV/
 **/.vscode
 
 **/config.py
+
+**/data

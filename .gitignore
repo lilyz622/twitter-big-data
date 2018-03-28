@@ -1,3 +1,7 @@
+# vm generated files
+*~
+*.java
+
 # Twitter key
 twitterkeys.py
 twitterkeys.*

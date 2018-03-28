@@ -65,7 +65,7 @@ class MyListener(StreamListener):
                 self.db.store_tweet(data)
             except:
                 print("Error on_data storage")
-            time.sleep(5)
+                time.sleep(5)
         return True
 
     def on_error(self, status):

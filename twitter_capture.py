@@ -1,11 +1,13 @@
 # To run this code, first edit config.py with your configuration, then:
 #
 # mkdir data
+
 # python twitter_capture.py -q apple -d data (-s True)
 # (add "> /dev/null" to command above for no output)
 # (-s is optional; use -s True to stream tweets into database)
 #
 # It will produce the list of tweets for the query "apple"
+
 # in the file data/stream_apple.json
 
 import tweepy
@@ -17,6 +19,7 @@ import argparse
 import string
 import config
 import json
+
 from db_setup import Db
 
 def get_parser():
@@ -31,6 +34,7 @@ def get_parser():
                         "--data-dir",
                         dest="data_dir",
                         help="Output/Data Directory")
+
     parser.add_argument("-s",
                         "--is-storing-to-db",
                         required = False,
@@ -38,11 +42,13 @@ def get_parser():
                         type = bool,
                         dest="is_storing_to_db",
                         help="twitter.tweet")
+
     return parser
 
 
 class MyListener(StreamListener):
     """Custom StreamListener for streaming data."""
+
 
     def __init__(self, data_dir, query, is_storing_to_db):
         query_fname = format_filename(query)
@@ -52,11 +58,13 @@ class MyListener(StreamListener):
         else:
             self.db = False
 
+
     def on_data(self, data):
         try:
             with open(self.outfile, 'a') as f:
                 f.write(data)
                 print(data)
+
         except BaseException as e:
             print("Error on_data: %s" % str(e))
             time.sleep(5)
@@ -66,6 +74,7 @@ class MyListener(StreamListener):
             except:
                 print("Error on_data storage")
                 time.sleep(5)
+
         return True
 
     def on_error(self, status):
@@ -110,6 +119,7 @@ if __name__ == '__main__':
     auth = OAuthHandler(config.CONSUMER_KEY, config.CONSUMER_SECRET)
     auth.set_access_token(config.ACCESS_TOKEN, config.ACCESS_SECRET)
     api = tweepy.API(auth)
+
 
     twitter_stream = Stream(auth, MyListener(args.data_dir, args.query, args.is_storing_to_db))
     twitter_stream.filter(track=[args.query])

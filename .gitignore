@@ -113,7 +113,9 @@ ENV/
 #Add ignore for .vscode
 **/.vscode
 
+
 **/config.py
 
 **/data
+
 **/data/*

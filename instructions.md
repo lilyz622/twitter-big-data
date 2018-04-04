@@ -23,9 +23,7 @@ To access a folder on your computer from the vm:
 ************************************************
 Installing packages python 2.7 on vm:
 
-1. pip install tweepy
-2. pip install mysql-connector
-3. pip install python-dateutil
+1. pip install -r requirements.txt
 
 ************************************************
 To run the bash script on your vm and sqoop mysql table into hive:

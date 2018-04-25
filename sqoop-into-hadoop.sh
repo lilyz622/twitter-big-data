@@ -25,6 +25,7 @@ beeline -u jdbc:hive2://localhost:10000 -n training -p training -f ./hive_script
 # create twitter db in hive
 beeline -u jdbc:hive2://localhost:10000 -n training -p training -f ./hive_scripts/create-twitter.hql
 
+
 # update tweet set text=replace(replace(text, '\r',''), '\n','');
 # sqoop into twitter.tweets in hive on hdfs
 sqoop import --connect jdbc:mysql://localhost/twitter --username training --password training --table tweet --null-non-string '\\N' --hive-import --hive-table twitter.tweets

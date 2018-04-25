@@ -23,6 +23,7 @@ To access a folder on your computer from the vm:
 ************************************************
 Installing packages python 2.7 on vm:
 
+
 1. pip install -r requirements.txt
 
 ************************************************

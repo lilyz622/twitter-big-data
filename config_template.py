@@ -3,7 +3,9 @@
 
 # Login to twitter
 # http://apps.twitter.com
+
 # Create new app
+
 # -- URL can be placeholder
 # -- Callback should be left blacnk
 # Click link to "manage keys and access tokens"
@@ -20,3 +22,4 @@ USER = 'Your User'
 PASSWD = 'Your Password'
 DATABASE = 'twitter'
 TABLE='tweet'
+

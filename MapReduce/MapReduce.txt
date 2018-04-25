@@ -1,0 +1,2 @@
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.4.3.jar -mapper BigramMapper.py -reducer BigramReducer.py -file ./BigramMapper.py -file ./BigramReducer.py -input /user/hive/warehouse/twitter.db/tweets/* -output test4output
+

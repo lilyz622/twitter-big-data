@@ -115,4 +115,13 @@ ENV/
 
 **/config.py
 
+<<<<<<< HEAD
 **/data
+=======
+**/data
+**/data/*
+
+**/*.swp
+
+**/part-*
+>>>>>>> f7d0529c85907f4dc91f6f36c04ef8fe744818aa

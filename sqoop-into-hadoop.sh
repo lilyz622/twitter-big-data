@@ -11,7 +11,11 @@ sudo service hive-server2 restart
 sudo service hue restart
 
 #capture the tweets for "-t seconds"
-python twitter_capture.py -q trump -d data -s True -t 10
+python twitter_capture.py \
+    -q trump \
+    -d data \
+    -s True \
+    -t 600
 
 
 # check if table is where we want it
@@ -28,11 +32,18 @@ if [[ $sqoop_tables = *$table* && $mysql_tables = *$table* ]]; then
 #beeline -u jdbc:hive2://localhost:10000 -n training -p training -f ./hive_scripts/delete-tweet.hql
 
 # create twitter db in hive
-beeline -u jdbc:hive2://localhost:10000 -n training -p training -f ./hive_scripts/create-twitter.hql
+beeline -u jdbc:hive2://localhost:10000 \
+-n training \
+-p training \
+-f ./hive_scripts/create-twitter.hql
 
 # update tweet set text=replace(replace(text, '\r',''), '\n','');
 # sqoop into twitter.tweets in hive on hdfs
-sqoop import --direct --connect jdbc:mysql://localhost/twitter --username training --password training --table tweet --null-non-string '\\N' --hive-import --hive-table twitter.tweets
+sqoop import --direct \
+    --connect jdbc:mysql://localhost/twitter \
+    --username training --password training \
+    --table tweet --null-non-string '\\N' \
+    --hive-import --hive-table twitter.tweets
 
 mysql --user=training --password=training --host=localhost --database=twitter -e 'drop table if exists tweet'
 

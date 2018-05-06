@@ -1,3 +1,5 @@
+#For detailed instructions regarding how the code works, please see the [instructions.md](https://github.com/jpfreeley/twitter-big-data/blob/master/instructions.md) file.
+
 # twitter-big-data
 Twitter Big Data - MapReduce, HDFS, Python, Hive, Impala, Firehose
 

@@ -4,7 +4,7 @@ import sys
 
 for line in sys.stdin:
     fields = line.strip().split("")
-    sentence = fields[5]
+    sentence = fields[8]
     words = sentence.split()
     mixwords = zip(words[:-1],words[1:])
     for bigram in mixwords:

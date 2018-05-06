@@ -77,16 +77,16 @@ To sort, descending, the output of the MapReduce jobs:
 % hdfs dfs -cat output-name/part-00000 | \
     awk '{ print $2 " " $1}' | \
     sort -n -r | \
-    more
+    head -20
 
 #BigramMapper
 % hdfs dfs -cat output-bigram/part-00000 | \
     awk '{ print $3 " " $1$2}' | \
     sort -n -r | \
-    more
+    head -20
 
 #WordMapper
 % hdfs dfs -cat output-word/part-00000 | \
-awk '{ print $2 " " $1}' | \
-sort -n -r | \
-more
+    awk '{ print $2 " " $1}' | \
+    sort -n -r | \
+    head -20

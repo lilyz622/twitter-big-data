@@ -4,6 +4,9 @@
 # to be run in your virtual machine - navigate to "/mnt/hgfs/twitter-big-data"
 # chmod a+x ./sqoop-into-hadoop.sh # run this before you run the script
 
+#Install required python packages
+pip install -r requirements.txt
+
 # start services
 $DEV1/scripts/training_setup_dev1.sh
 sudo service zookeeper-server restart

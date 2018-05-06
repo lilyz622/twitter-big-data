@@ -1,4 +1,15 @@
 ************************************************
+To run the bash script on your vm and sqoop mysql table into hive:
+
+1. Do the above first
+2. navigate to  /mnt/hgfs/twitter-big-data
+3. run the twitter_capture.py to stream data into your vm mysql
+4. run the following in terminal:
+
+chmod a+x ./sqoop-into-hadoop.sh
+./sqoop-into-hadoop.sh
+
+************************************************
 To run twitter_capture.py:
 
 1. first edit config.py with your configuration 
@@ -11,8 +22,6 @@ python twitter_capture.py -q apple -d data <-s True>
 (-s is optional; use -s True to stream tweets into database)
 
 It will produce the list of tweets for the query "apple" in the file data/stream_apple.json
-
-
 
 ************************************************
 To access a folder on your computer from the vm:

@@ -40,3 +40,34 @@ To query data in hive:
 
 % beeline -u jdbc:hive2://localhost:10000/twitter -n training -p training
 > select * from tweets limit 1;
+
+************************************************
+To execute the MapReduce jobs:
+
+#NameMapper
+% hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.4.3.jar \
+    -mapper NameMapper.py \
+    -reducer NameReducer.py \
+    -file ./MapReduce/NameMapper.py \
+    -file ./MapReduce/NameReducer.py \
+    -input /user/hive/warehouse/twitter.db/tweets/* \
+    -output output-name
+
+#BigramMapper
+% hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.4.3.jar \
+    -mapper BigramMapper.py \
+    -reducer BigramReducer.py \
+    -file ./MapReduce/BigramMapper.py \
+    -file ./MapReduce/BigramReducer.py \
+    -input /user/hive/warehouse/twitter.db/tweets/* \
+    -output output-bigram
+
+#WordMapper
+% hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.4.3.jar \
+    -mapper WordMapper.py \
+    -reducer WordReducer.py \
+    -file ./MapReduce/WordMapper.py \
+    -file ./MapReduce/WordReducer.py \
+    -input /user/hive/warehouse/twitter.db/tweets/* \
+    -output output-word
+

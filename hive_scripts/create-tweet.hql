@@ -1,7 +1,9 @@
 CREATE
-TABLE tweets
+TABLE IF NOT EXISTS
+tweets
 (
 id int,
+retweeted string,
 tweet_id string,
 user_id string,
 screen_name string,
@@ -16,6 +18,6 @@ load
 data
 inpath
 '/data/tweets/users.dat'
-OVERWRITE into
-table users
+into table 
+users
 ;

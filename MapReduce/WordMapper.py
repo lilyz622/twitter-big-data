@@ -4,7 +4,7 @@ import sys
 
 for line in sys.stdin:
     fields = line.strip().split("")
-    sentence = fields[5]
+    sentence = fields[8]
     words = sentence.split()
     for word in words:
         print >> sys.stdout, "%s\t%s" % (word, 1)

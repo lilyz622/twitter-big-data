@@ -5,7 +5,7 @@ for line in sys.stdin:
 
     # Extract the needed information
     fields = line.strip().split("")
-    name = fields[3]
+    name = fields[6]
     print >> sys.stdout, "%s\t%s" % (name, 1)
   
     

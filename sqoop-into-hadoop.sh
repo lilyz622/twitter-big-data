@@ -18,7 +18,7 @@ python twitter_capture.py \
     -q trump \
     -d data \
     -s True \
-    -t 6
+    -t 600
 
 # check if table is where we want it
 sqoop_tables=$(sqoop list-tables --connect jdbc:mysql://localhost/twitter --username training --password training)
